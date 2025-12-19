@@ -32,3 +32,9 @@ textarea {
 .easy { color: green; }
 .medium { color: orange; }
 .hard { color: red; }
+
+.pattern {
+  font-size: 0.9em;
+  color: #374151;
+  white-space: nowrap;
+}

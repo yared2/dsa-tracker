@@ -15,23 +15,15 @@ problems.forEach(problem => {
   const row = document.createElement("tr");
   const saved = state[problem.id] || {};
 
-  row.innerHTML = `
-    <td>
-      <input type="checkbox" class="done" ${saved.done ? "checked" : ""}>
-    </td>
-    <td>
-      <a href="${problem.leetcode}" target="_blank">${problem.title}</a>
-    </td>
-    <td class="${problem.difficulty.toLowerCase()}">
-      ${problem.difficulty}
-    </td>
-    <td>
-      <textarea class="notes" placeholder="Add notes...">${saved.notes || ""}</textarea>
-    </td>
-    <td>
-      <input type="checkbox" class="star" ${saved.star ? "checked" : ""}>
-    </td>
-  `;
+row.innerHTML = `
+  <td><input type="checkbox" class="done" ${saved.done ? "checked" : ""}></td>
+  <td><a href="${problem.leetcode}" target="_blank">${problem.title}</a></td>
+  <td class="${problem.difficulty.toLowerCase()}">${problem.difficulty}</td>
+  <td class="pattern">${problem.pattern}</td>
+  <td><textarea class="notes" placeholder="Add notes...">${saved.notes || ""}</textarea></td>
+  <td><input type="checkbox" class="star" ${saved.star ? "checked" : ""}></td>
+`;
+
 
   const done = row.querySelector(".done");
   const notes = row.querySelector(".notes");
